@@ -50,9 +50,7 @@ class CameraView: UIView {
         
         // point마다 원 그려주기
         for point in Array(points.values) {
-            print(point)
             let cgPoint: CGPoint = previewLayer.layerPointConverted(fromCaptureDevicePoint: point.previewPoint)
-            print(cgPoint)
             pointsPath.move(to: cgPoint)
             pointsPath.addArc(withCenter: cgPoint, radius: 5, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         }
